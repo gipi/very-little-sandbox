@@ -1,0 +1,31 @@
+This is a simple experiment about using library interposition
+by the LD_PRELOAD trick.
+
+Simply the library is going to intercept some libc calls and
+make stuffs.
+
+In order to use this you can launch your application in this way
+
+ $ LD_PRELOAD=./libwrap.so cat /etc/password >/dev/null
+ [opened file: '/etc/passwd']
+ $ LD_PRELOAD=./libwrap.so ncat google 80
+ [opened file: '/etc/hosts']
+ [connect to 208.67.222.222:53]
+ [opened file: '/dev/urandom']
+ [opened file: '/dev/urandom']
+ [connect to 67.215.65.132:80]
+ HTTP/1.0 408 Request Time-out
+ Cache-Control: no-cache
+ Connection: close
+ Content-Type: text/html
+
+ <html><body><h1>408 Request Time-out</h1>
+ Your browser didn't send a complete request in time.
+ </body></html>
+
+INSTALLATION
+------------
+
+Nothing to install, simply compile it with
+
+ $ make
