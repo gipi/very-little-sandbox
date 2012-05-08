@@ -1,6 +1,6 @@
 /**
  * In order to find which call is used in an ELF file you can
- * use nm(1); for example to llok inside cat(1) and find out
+ * use nm(1); for example to look inside cat(1) and find out
  * which one of the open's family is used you can do this
  *
  *  $ nm -D `which cat` | grep open
