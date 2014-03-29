@@ -29,3 +29,8 @@ INSTALLATION
 Nothing to install, simply compile it with
 
  $ make
+
+LINK
+----
+
+ - http://ellzey.github.io/2014/03/22/preload-reload/
